@@ -44,16 +44,3 @@ input[type=number], select {
     gap: 5px;
 }
 
-form > button {
-    cursor: pointer;
-    min-height: 55px;
-    min-width: 190px;
-    width: 20%;
-    background-color: #4D5B9E;
-    color: #F5F7FB;
-    font-size: 1em;
-    font-weight: 500;
-    border: none;
-    border-radius: 15px;
-    margin-top: 30px;
-}

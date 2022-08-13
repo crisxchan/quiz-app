@@ -1,4 +1,5 @@
 import '../styles/initialView.css'
+import '../styles/App.css'
 
 export default function InitialView(props) {
     return (
@@ -71,7 +72,7 @@ export default function InitialView(props) {
                     <label htmlFor="hard">Hard</label>
                 </div>
 
-                <button>Start Quiz</button>    
+                <button className="btn-submit">Start Quiz</button>    
             </form>
         </div>
     )

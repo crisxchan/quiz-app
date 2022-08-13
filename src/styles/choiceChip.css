@@ -8,8 +8,9 @@
     align-items: center;
     justify-content: center;
     transition: 0.2s ease-in-out;
+    text-align: center;
 }
 
-.choice-chip:hover {
+.active, .choice-chip:hover {
     background-color: #D6DBF5;
 }
