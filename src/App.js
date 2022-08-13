@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import InitialView from './components/InitialView';
 import QuestionsView from './components/QuestionsView';
 import './styles/App.css';
@@ -13,6 +13,27 @@ function App() {
         difficulty: "easy"
     }
   )
+  const [questionsUrl, setQuestionsUrl] = useState('');
+
+  useEffect(() => {
+    let url = `https://opentdb.com/api.php?amount=${formData.numQfQuestions}`
+    url += formData.category !== 'any' ? `&category=${formData.category}` : ''
+
+    switch(formData.difficulty){
+      case 'easy':
+        url += '&difficulty=easy'
+        break;
+      case 'medium':
+        url += '&difficulty=medium'
+        break
+      case 'hard':
+        url += '&difficulty=hard'
+        break
+      default:
+        break;
+    }
+    setQuestionsUrl(url)
+  }, [formData])
 
   function handleChange(event) {
     const {name, value} = event.target
@@ -35,7 +56,7 @@ function App() {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           /> 
-        : <QuestionsView />
+        : <QuestionsView questionsUrl={questionsUrl}/>
       }
     </div>
   );

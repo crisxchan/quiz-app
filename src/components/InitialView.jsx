@@ -46,7 +46,7 @@ export default function InitialView(props) {
                         checked={props.formData.difficulty === "easy"}
                         onChange={props.handleChange}
                     />
-                    <label htmlFor="unemployed">Easy</label>
+                    <label htmlFor="easy">Easy</label>
                     <br />
                     
                     <input 
@@ -57,7 +57,7 @@ export default function InitialView(props) {
                         checked={props.formData.difficulty === "medium"}
                         onChange={props.handleChange}
                     />
-                    <label htmlFor="part-time">Medium</label>
+                    <label htmlFor="medium">Medium</label>
                     <br />
                     
                     <input 

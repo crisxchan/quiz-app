@@ -1,0 +1,25 @@
+#questions-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question {
+    min-width: 450px;
+    width: 80%;
+    border-bottom: 2px solid #DBDEF0;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-block: 15px;
+}
+
+.choice-wrapper {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    justify-content: space-around;
+}
