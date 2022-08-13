@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import InitialView from './components/InitialView';
 import './styles/App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <InitialView />
     </div>
   );
 }
