@@ -16,7 +16,35 @@
     margin-top: 10px;
 }
 
-#initial-view > button {
+/* form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.input-not-radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type=number], select {
+    text-align: center;
+    padding-block: 2px;
+    font-size: 0.9em;
+    width: 160px;
+} 
+
+#radio-difficulty {
+    display: flex;
+    gap: 5px;
+}
+
+form > button {
     cursor: pointer;
     min-height: 55px;
     min-width: 190px;
