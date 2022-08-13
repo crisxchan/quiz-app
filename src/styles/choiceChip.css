@@ -1,6 +1,6 @@
 .choice-chip {
     cursor: pointer;
-    min-width: 90px;
+    min-width: 120px;
     padding: 8px 10px;
     border: 2px solid #4D5B9E;
     border-radius: 10px;
@@ -13,4 +13,16 @@
 
 .active, .choice-chip:hover {
     background-color: #D6DBF5;
+}
+
+.correct, .check {
+    border: 2px solid greenyellow;
+}
+
+.check {
+    background-color: rgb(52, 218, 66);
+}
+
+.incorrect {
+    border: 2px solid crimson
 }
