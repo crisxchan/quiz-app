@@ -1,5 +1,5 @@
 import ChoiceChip from "./ChoiceChip"
-import { Markup } from "interweave"
+import { decode } from "html-entities"
 import { nanoid } from "nanoid"
 import '../styles/question.css'
 
@@ -18,7 +18,7 @@ export default function Question(props) {
 
     return (
         <div className="question">
-            <h2><Markup content={props.question} /></h2>
+            <h2>{decode(props.question)}</h2>
             <div className="choice-wrapper">{choiceElements}</div>
         </div>
     )

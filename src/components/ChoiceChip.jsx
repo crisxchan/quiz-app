@@ -1,4 +1,4 @@
-import { Markup } from "interweave"
+import { decode } from "html-entities"
 import '../styles/choiceChip.css'
 
 export default function ChoiceChip(props) {
@@ -21,7 +21,7 @@ export default function ChoiceChip(props) {
             onClick={props.chooseAnswer}
             style={{cursor: props.showAnswers ? "default" : "pointer"}}
         >
-            <Markup content={props.label} />
+            {decode(props.label)}
         </div>
     )
 }

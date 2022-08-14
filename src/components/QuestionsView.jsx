@@ -2,6 +2,7 @@ import Question from "./Question"
 import LoadingIndicator from "./LoadingIndicator"
 import { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
+import { decode } from "html-entities"
 import arrayShuffle from "array-shuffle"
 import '../styles/App.css'
 
@@ -58,7 +59,7 @@ export default function QuestionsView(props) {
     function chooseAnswer(event) {
         let indexOfTarget = parseInt(event.currentTarget.dataset.id)
         let choiceGivenIndex = choicesArr[indexOfTarget].map(choices => {
-            return choices.label === event.target.innerText ? {
+            return decode(choices.label) === event.target.innerText ? {
                 ...choices,
                 isActive: true
             }
