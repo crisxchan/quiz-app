@@ -1,5 +1,5 @@
 .choice-chip {
-    min-width: 120px;
+    min-width: 70px;
     padding: 8px 10px;
     border: 2px solid #4D5B9E;
     border-radius: 10px;
@@ -8,6 +8,7 @@
     justify-content: center;
     transition: 0.2s ease-in-out;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 .active, .with-hover:hover {

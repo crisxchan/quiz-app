@@ -1,17 +1,22 @@
-#questions-view {
-    height: 100%;
-}
-
 #questions-view, #questions-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+
+#questions-view {
+    height: 100%;
+}
+
+#questions-wrapper {
+    width: 80%;
 }
 
 .question {
     text-align: center;
-    min-width: 450px;
-    width: 80%;
+    min-width: 350px;
+    width: 100%;
     border-bottom: 2px solid #DBDEF0;
     display: flex;
     flex-direction: column;
