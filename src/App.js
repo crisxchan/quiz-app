@@ -8,7 +8,7 @@ function App() {
   const [isInitialView, setIsInitialView] = useState(true)
   const [formData, setFormData] = useState(
     {
-        numQfQuestions: "4",
+        numQfQuestions: "10",
         category: "any",
         difficulty: "easy"
     }

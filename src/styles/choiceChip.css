@@ -1,5 +1,4 @@
 .choice-chip {
-    cursor: pointer;
     min-width: 120px;
     padding: 8px 10px;
     border: 2px solid #4D5B9E;
@@ -11,8 +10,13 @@
     text-align: center;
 }
 
-.active, .choice-chip:hover {
+.active, .with-hover:hover {
     background-color: #D6DBF5;
+}
+
+.without-hover {
+    border: 2px solid #ccceda;
+    color: #ccceda;   
 }
 
 .correct, .check {
@@ -20,9 +24,12 @@
 }
 
 .check {
-    background-color: rgb(52, 218, 66);
+    color: #293264;
+    background-color: #94D7A2;
 }
 
 .incorrect {
+    background-color: #F8BCBC;
+    color: #293264;
     border: 2px solid crimson
 }

@@ -1,7 +1,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  color: #293264;
 }
 
 html, body, #root, .App {
@@ -10,9 +9,17 @@ html, body, #root, .App {
 
 body {
   margin: 0;
+  color: #293264;
   font-family: 'Karla', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F5F7FB;
 }
 
+#loading-indicator {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

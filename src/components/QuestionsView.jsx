@@ -1,5 +1,6 @@
 
 import Question from "./Question"
+import LoadingIndicator from "./LoadingIndicator"
 import { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
 import arrayShuffle from "array-shuffle"
@@ -11,6 +12,7 @@ export default function QuestionsView(props) {
     const [choicesArr, setChoicesArr] = useState([])   
     const [score, setScore] = useState([])
     const [showAnswers, setShowAnswers] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         fetch(props.questionsUrl)
@@ -23,7 +25,9 @@ export default function QuestionsView(props) {
                     return {
                         id,
                         label,
-                        isAnswer: index + 1 === itemArr.length ? true : false,
+                        isAnswer: index + 1 === itemArr.length 
+                            ? true 
+                            : false,
                         isActive: false
                     }
                 })
@@ -31,6 +35,7 @@ export default function QuestionsView(props) {
             setChoicesArr(prevChoicesArr => prevChoicesArr.map(choices => {
                 return arrayShuffle(choices)
             }))
+            setIsLoading(false)
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -78,6 +83,7 @@ export default function QuestionsView(props) {
                 key={nanoid()}
                 question={question.question}
                 choices={choicesArr[i]}
+                chooseAnswer={() => {}}
                 correctAnswer={choicesArr[i].findIndex(choice => choice.isAnswer)}
             />
         }))
@@ -95,15 +101,21 @@ export default function QuestionsView(props) {
                 {questionElements}
             </div>
             {showAnswers && 
-                <p>
-                    {score} over {choicesArr.length}
-                </p>
+                <div id="score">
+                    <p>
+                        You got {score}/{choicesArr.length} correct answers
+                    </p>
+                </div>
             }
-            {
-                showAnswers ? 
-                <button onClick={resetGame} className="btn-submit">Play Again</button>
-                : <button onClick={checkAnswers} className="btn-submit">Check Answers</button>
-                
+            {   
+                isLoading ? <LoadingIndicator />
+                : <div>
+                    {
+                        showAnswers ? 
+                        <button onClick={resetGame} className="btn-submit">Play Again</button>
+                        : <button onClick={checkAnswers} className="btn-submit">Check Answers</button>    
+                    }
+                </div>
             }
         </div>
     )

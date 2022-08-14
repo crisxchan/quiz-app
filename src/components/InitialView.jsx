@@ -71,7 +71,7 @@ export default function InitialView(props) {
                     />
                     <label htmlFor="hard">Hard</label>
                 </div>
-
+                
                 <button className="btn-submit">Start Quiz</button>    
             </form>
         </div>
