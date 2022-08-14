@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import InitialView from './components/InitialView';
 import QuestionsView from './components/QuestionsView';

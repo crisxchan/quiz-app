@@ -1,4 +1,3 @@
-
 import Question from "./Question"
 import LoadingIndicator from "./LoadingIndicator"
 import { useState, useEffect } from "react"
